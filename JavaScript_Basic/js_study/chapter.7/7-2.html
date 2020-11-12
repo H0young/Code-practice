@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blood pressure</title>
+  <script>
+    window.onload = function() {
+      document.getElementById("button").onclick = function() {
+        var hp = parseFloat(document.getElementById("highpressure").value)
+        var lp = parseFloat(document.getElementById("lowpressure").value)
+        var judgement = document.getElementById("judgement")
+        if(hp<120 && lp<80) {
+          judgement.innerHTML = "Normal pressure"
+        } else if (hp<139 && lp<89) {
+          judgement.innerHTML = "Quiet high pressure"
+        } else {
+          judgement.innerHTML = "High pressure"
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <p>Blood pressure(high) : <input type="number" id="highpressure"></p>
+  <p>Blood pressure(low) : <input type="number" id="lowpressure"></p>
+  <p id="judgement">For check your blood pressure, Click button</p>
+  <input type="button" id="button" value="check">
+</body>
+</html>
