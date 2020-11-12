@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Checker</title>
+  <script>
+    window.onload = function() {
+      document.getElementById("button").onclick = function() {
+        var h = parseFloat(document.getElementById("height").value)
+        var w = parseFloat(document.getElementById("weight").value)
+        var bmi = document.getElementById("bmi")
+        bmi.innerHTML = (w/h/h).toFixed(1)
+      }
+    }
+  </script>
+</head>
+<body>
+  <p>Height: <input type="number"id="height"> m</p>
+  <p>Weight: <input type="number" id="weight"> kg</p>
+  <p>Your BMI: <output id="bmi">click the check button</output> </p>
+  <input type="button" value="Check" id="button">
+</body>
+</html>
